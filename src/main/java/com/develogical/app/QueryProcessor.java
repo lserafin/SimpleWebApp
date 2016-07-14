@@ -4,7 +4,7 @@ public class QueryProcessor {
 
     public String process(String query) {
 
-        String ciQuery = query.toLowerCase();
+        String ciQuery = query.toLowerCase().trim();
 
         if (ciQuery.contains("shakespeare")) {
             return "William Shakespeare (26 April 1564 - 23 April 1616) was an " +
