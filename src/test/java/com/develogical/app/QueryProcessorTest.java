@@ -34,4 +34,9 @@ public class QueryProcessorTest {
     public void isNotCaseMozart() throws Exception {
         assertThat(queryProcessor.process("Mozart"), containsString("Salzburg"));
     }
+
+//    @Test
+//    public void whatIsYourNameRequestShouldReturnAPIName() throws Exception {
+//        assertThat(queryProcessor.process("Mozart"), containsString("Salzburg"));
+//    }
 }
