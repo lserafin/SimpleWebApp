@@ -17,14 +17,29 @@ public class QueryProcessor {
                 return "Wolfgang Amadeus Mozart, baptised as Johannes Chrysostomus Wolfgangus Theophilus Mozart, was a prolific and influential composer of the Classical era. Born in Salzburg, Mozart showed prodigious ability from his earliest childhood.";
             } else if (ciQuery.contains("name")) {
                 return "kell01";
-            } else if (ciQuery.contains("plus")) {
+            }
+
+            else if (ciQuery.contains("plus")) {
                 String[] parts = ciQuery.split(" ");
                 int part1 = Integer.valueOf(parts[3]); // 004
                 int part2 = Integer.valueOf(parts[5]); // -034556
 
                 return String.valueOf((part1 + part2));
 
-            } else if (ciQuery.contains("largest")) {
+            }
+
+
+
+            else if (ciQuery.contains("minus")) {
+                String[] parts = ciQuery.split(" ");
+                int part1 = Integer.valueOf(parts[3]); // 004
+                int part2 = Integer.valueOf(parts[5]); // -034556
+
+                return String.valueOf((part1 - part2));
+
+            }
+
+            else if (ciQuery.contains("largest")) {
                 int theIndex = ciQuery.lastIndexOf(":");
                 String newText = ciQuery.substring(theIndex + 1).trim();
                 String[] numberArray = newText.split(",");

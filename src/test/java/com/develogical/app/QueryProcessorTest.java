@@ -36,7 +36,7 @@ public class QueryProcessorTest {
     }
 
     @Test
-    public void whatIsYourNameRequestShouldReturnAPIName() throws Exception {
+    public void TestAddition() throws Exception {
         String query = "7066c290: what is 11 plus 7";
 
 
@@ -131,4 +131,13 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process(query), containsString("David Cameron"));
     }
 
+
+    @Test
+    public void TestSubtraction() throws Exception {
+        String query = "4dcb9120: what is 15 minus 11";
+
+
+        assertThat(queryProcessor.process(query), containsString("4"));
+    }
+    
 }
