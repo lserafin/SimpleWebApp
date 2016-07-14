@@ -9,6 +9,8 @@ public class QueryProcessor {
                     "writer in the English language and the world's pre-eminent dramatist.";
         } else if (query.toLowerCase().contains("mozart")) {
             return "Wolfgang Amadeus Mozart, baptised as Johannes Chrysostomus Wolfgangus Theophilus Mozart, was a prolific and influential composer of the Classical era. Born in Salzburg, Mozart showed prodigious ability from his earliest childhood.";
+        } else if( query.toLowerCase().contains("name")){
+            return "kell01";
         }
         return "";
     }
