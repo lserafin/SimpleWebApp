@@ -59,5 +59,14 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process(query), containsString("50"));
     }
 
+    @Test
+    public void whatIsSquereandCubeProduct() throws Exception {
+        String query = "3b6ad3b0: which of the following numbers is both a square and a cube: 373, 4096, 438, 2304";
+
+
+        assertThat(queryProcessor.process(query), containsString("4096"));
+    }
+
+
 
 }

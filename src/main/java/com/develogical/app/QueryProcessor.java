@@ -48,6 +48,24 @@ public class QueryProcessor {
             return String.valueOf((part1 * part2));
 
         }
+        else if(ciQuery.contains("square")){
+
+            int theIndex = ciQuery.lastIndexOf(":");
+            String newText = ciQuery.substring(theIndex+1).trim();
+            String[] numberArray = newText.split(",");
+
+
+            for(int i = 0;i<numberArray.length; i++){
+
+                Integer number = Integer.valueOf(numberArray[i].trim());
+                double sqrRoot = Math.sqrt(number);
+                double cubeRoot = Math.cbrt(number);
+
+                if(Math.floor(sqrRoot) == Math.ceil(sqrRoot) && Math.floor(cubeRoot) == Math.ceil(cubeRoot))
+                    return  String.valueOf(number);
+                }
+
+        }
         //what is your name
         return "";
     }
