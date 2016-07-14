@@ -82,7 +82,46 @@ public class QueryProcessorTest {
 
         assertThat(queryProcessor.process(query), containsString("433"));
     }
-    
+
+    @Test
+    public void Test0thNumberInFibonacciSequence() throws Exception {
+        String query = "ec7a1ea0: what is the 0th number in the Fibonacci sequence";
+
+
+        assertThat(queryProcessor.process(query), containsString("0"));
+    }
+    @Test
+    public void Test1stNumberInFibonacciSequence() throws Exception {
+        String query = "ec7a1ea0: what is the 1st number in the Fibonacci sequence";
+
+
+        assertThat(queryProcessor.process(query), containsString("1"));
+    }
+    @Test
+    public void Test2ndNumberInFibonacciSequence() throws Exception {
+        String query = "ec7a1ea0: what is the 2nd number in the Fibonacci sequence";
+
+
+        assertThat(queryProcessor.process(query), containsString("1"));
+    }
+    @Test
+    public void TestNumberInFibonacciSequence() throws Exception {
+
+        String query = "ec7a1ea0: what is the 3rd number in the Fibonacci sequence";
+        assertThat(queryProcessor.process(query), containsString("2"));
+
+
+         query = "ec7a1ea0: what is the 10th number in the Fibonacci sequence";
+        assertThat(queryProcessor.process(query), containsString("55"));
+
+
+         query = "ec7a1ea0: what is the 16th number in the Fibonacci sequence";
+        assertThat(queryProcessor.process(query), containsString("987"));
+
+
+         query = "ec7a1ea0: what is the 41st number in the Fibonacci sequence";
+        assertThat(queryProcessor.process(query), containsString("165580141"));
+    }
 
 
 }

@@ -1,5 +1,7 @@
 package com.develogical.app;
 
+import java.util.ArrayList;
+
 public class QueryProcessor {
 
     public String process(String query) {
@@ -84,6 +86,38 @@ public class QueryProcessor {
                 }
             }
             return  primes;
+
+        }
+
+
+
+        else if(ciQuery.contains("fibonacci")){
+
+            String[] numberArray = ciQuery.split(" ");
+            String numberText = numberArray[numberArray.length-6];
+             numberText = numberText.replace("th", "");
+            numberText = numberText.replace("rd", "");
+            numberText = numberText.replace("st", "");
+            numberText = numberText.replace("nd", "");
+
+            Integer i = Integer.valueOf(numberText);
+            if(i == 0)
+                return  "0";
+            else if(i == 1)
+                return  "1";
+            else if(i == 2)
+                return "1";
+            else {
+
+                ArrayList<Integer> fib = new ArrayList<Integer>();
+                fib.add(1);
+                fib.add(1);
+
+                for (Integer index=1; index<i; index++)
+                    fib.add(fib.get(index-1)+fib.get(index));
+
+                return String.valueOf( fib.get(i-1));
+            }
 
         }
         //what is your name
