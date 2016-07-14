@@ -23,7 +23,7 @@ public class QueryProcessor {
 
         } else if(ciQuery.contains("largest")){
             int theIndex = ciQuery.lastIndexOf(":");
-            String newText = ciQuery.substring(theIndex);
+            String newText = ciQuery.substring(theIndex+1).trim();
             String[] numberArray = newText.split(",");
 
             int biggest = Integer.valueOf(numberArray[0].trim());

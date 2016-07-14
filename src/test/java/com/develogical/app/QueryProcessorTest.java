@@ -35,8 +35,21 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process("Mozart"), containsString("Salzburg"));
     }
 
-//    @Test
-//    public void whatIsYourNameRequestShouldReturnAPIName() throws Exception {
-//        assertThat(queryProcessor.process("Mozart"), containsString("Salzburg"));
-//    }
+    @Test
+    public void whatIsYourNameRequestShouldReturnAPIName() throws Exception {
+        String query = " what is 14 plus 1 ";
+
+
+        assertThat(queryProcessor.process(query), containsString("15"));
+    }
+
+    @Test
+    public void whatIsTheBiggestNumber() throws Exception {
+        String query = "deef89e0: which of the following numbers is the largest: 79, 37, 812, 936";
+
+
+        assertThat(queryProcessor.process(query), containsString("936"));
+    }
+
+
 }
