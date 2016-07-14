@@ -16,8 +16,8 @@ public class QueryProcessor {
             return "kell01";
         } else if(ciQuery.contains("plus")){
             String[] parts = ciQuery.split(" ");
-            int part1 = Integer.valueOf(parts[2]); // 004
-            int part2 = Integer.valueOf(parts[4]); // -034556
+            int part1 = Integer.valueOf(parts[3]); // 004
+            int part2 = Integer.valueOf(parts[5]); // -034556
 
             return String.valueOf((part1 + part2));
 

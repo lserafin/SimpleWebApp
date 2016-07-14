@@ -37,10 +37,10 @@ public class QueryProcessorTest {
 
     @Test
     public void whatIsYourNameRequestShouldReturnAPIName() throws Exception {
-        String query = " what is 14 plus 1 ";
+        String query = "7066c290: what is 11 plus 7";
 
 
-        assertThat(queryProcessor.process(query), containsString("15"));
+        assertThat(queryProcessor.process(query), containsString("18"));
     }
 
     @Test
