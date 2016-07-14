@@ -38,6 +38,16 @@ public class QueryProcessor {
 
             return String.valueOf(biggest);
         }
+        else if(ciQuery.contains("multiplied")){
+
+            String[] parts = ciQuery.split(" ");
+            int length = parts.length;
+            int part1 = Integer.valueOf(parts[length-1]); // 004
+            int part2 = Integer.valueOf(parts[length-4]); // -034556
+
+            return String.valueOf((part1 * part2));
+
+        }
         //what is your name
         return "";
     }

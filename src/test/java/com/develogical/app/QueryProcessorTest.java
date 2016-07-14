@@ -51,5 +51,13 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process(query), containsString("936"));
     }
 
+    @Test
+    public void whatIsTheProduct() throws Exception {
+        String query = "f8a27e20: what is 10 multiplied by 5";
+
+
+        assertThat(queryProcessor.process(query), containsString("50"));
+    }
+
 
 }
