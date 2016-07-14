@@ -61,12 +61,28 @@ public class QueryProcessorTest {
 
     @Test
     public void whatIsSquereandCubeProduct() throws Exception {
-        String query = "3b6ad3b0: which of the following numbers is both a square and a cube: 373, 4096, 438, 2304";
+        String query = "3b6ad3b0: which of the following numbers is both a square and a cube: 373, 64, 438, 2304";
 
 
-        assertThat(queryProcessor.process(query), containsString("4096"));
+        assertThat(queryProcessor.process(query), containsString("64"));
     }
 
+    @Test
+    public void whatArePrimes() throws Exception {
+        String query = "3b6ad3b0: which of the following numbers are primes: 433, 317";
+
+
+        assertThat(queryProcessor.process(query), containsString("433, 317"));
+    }
+
+    @Test
+    public void whatIsSinglePrime() throws Exception {
+        String query = "3b6ad3b0: which of the following numbers are primes: 433";
+
+
+        assertThat(queryProcessor.process(query), containsString("433"));
+    }
+    
 
 
 }

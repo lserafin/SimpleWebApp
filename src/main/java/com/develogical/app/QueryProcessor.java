@@ -66,7 +66,38 @@ public class QueryProcessor {
                 }
 
         }
+
+        else if(ciQuery.contains("prime")){
+
+            int theIndex = ciQuery.lastIndexOf(":");
+            String newText = ciQuery.substring(theIndex+1).trim();
+            String[] numberArray = newText.split(",");
+
+            String primes = "", splitter ="";
+
+            for(int i = 0;i<numberArray.length; i++){
+
+                long number = Long.valueOf(numberArray[i].trim());
+                if(isPrime(number)) {
+                    primes = primes + splitter + number ;
+                    splitter = ", ";
+                }
+            }
+            return  primes;
+
+        }
         //what is your name
         return "";
+    }
+
+    public boolean isPrime(long n) {
+        // fast even test.
+        if(n > 2 && (n & 1) == 0)
+            return false;
+        // only odd factors need to be tested up to n^0.5
+        for(int i = 3; i * i <= n; i += 2)
+            if (n % i == 0)
+                return false;
+        return true;
     }
 }
