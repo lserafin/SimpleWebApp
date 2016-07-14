@@ -69,7 +69,7 @@ public class QueryProcessor {
 
         }
 
-        else if(ciQuery.contains("prime")){
+        else if(ciQuery.contains("prime") && ciQuery.contains("number")){
 
             int theIndex = ciQuery.lastIndexOf(":");
             String newText = ciQuery.substring(theIndex+1).trim();
@@ -86,6 +86,13 @@ public class QueryProcessor {
                 }
             }
             return  primes;
+
+        }
+
+        else if(ciQuery.contains("prime") && ciQuery.contains("minister")){
+
+
+            return  "David Cameron";
 
         }
 

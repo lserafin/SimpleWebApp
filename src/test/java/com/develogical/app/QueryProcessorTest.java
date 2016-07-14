@@ -123,5 +123,12 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process(query), containsString("165580141"));
     }
 
+    @Test
+    public void TestPrimeMinistersName() throws Exception {
+        String query = "who is the Prime Minister of Great Britain";
+
+
+        assertThat(queryProcessor.process(query), containsString("David Cameron"));
+    }
 
 }
