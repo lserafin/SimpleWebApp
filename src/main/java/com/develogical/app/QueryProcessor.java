@@ -21,12 +21,20 @@ public class QueryProcessor {
 
             return String.valueOf((part1 + part2));
 
-        } else if(ciQuery.contains("")){
+        } else if(ciQuery.contains("largest")){
+            int theIndex = ciQuery.indexOf(":");
+            String newText = ciQuery.substring(theIndex);
+            String[] numberArray = newText.split(",");
 
-        } else if(ciQuery.contains("")){
+            int biggest = Integer.valueOf(numberArray[0]);
 
+            for(int i = 1;i<numberArray.length; i++){
+                if (Integer.valueOf(numberArray[i])>biggest){
+                    biggest = Integer.valueOf(numberArray[i]);
+                }
+            }
+            return String.valueOf(biggest);
         }
-
         //what is your name
         return "";
     }
